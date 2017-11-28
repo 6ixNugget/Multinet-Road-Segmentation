@@ -19,3 +19,14 @@ Please refer to [Keras FAQ](https://keras.io/getting-started/faq/#how-can-i-save
 The network has an encoder-decoder structure similar with the one pioneered by [SegNet](https://arxiv.org/abs/1511.00561). It is composed of the first 13 conv layers of VGG16 (without the dense layers) as the encoder, and a semantic segmentation decoder following the FCN architecture. Given the encoder, the remaining fully connected (FC) layers of the VGG architecture are transformed into 1 × 1 convolutional layers to produce a low resolution segmentations. It is then followed by three transposed conv layers to perform upsampling. Notice that there are skip connections from lower layers to extract high resolution features. Those features are topped by 1 × 1 conv layers and then added into the upsampled results from transposed conv layers.
 
 ![alt text](https://s3.us-east-2.amazonaws.com/hosted-downloadable-files/Multinet+road+seg+structure.png "structure visual")
+
+### Results
+The model was trained on AWS p2xlarge instance with a single Tesla K80 graphic card.
+It was trained for 120 EPOCHs with a batch size of 1. All 289 training images were used.
+![alt text](https://s3.us-east-2.amazonaws.com/hosted-downloadable-files/um_000006.png "result visual1")
+![alt text](https://s3.us-east-2.amazonaws.com/hosted-downloadable-files/um_000017.png "result visual2")
+![alt text](https://s3.us-east-2.amazonaws.com/hosted-downloadable-files/um_000032.png "result visual3")
+![alt text](https://s3.us-east-2.amazonaws.com/hosted-downloadable-files/uu_000059.png "result visual4")
+
+### To-Do
+I notice that the model performed particularly badly on the urban unmarked dataset. I will investigate further and update this part later.
