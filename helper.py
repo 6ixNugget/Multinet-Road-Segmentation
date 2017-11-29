@@ -73,7 +73,6 @@ def save_inference_samples(runs_dir, data_dir, image_shape, model_path):
 
     model = load_model(model_path)
 
-    model.evaluate()
     image_outputs = gen_test_output(model, os.path.join(data_dir, 'data_road/testing'), image_shape)
     for name, image, seg in image_outputs:
         scipy.misc.imsave(os.path.join(output_dir, name), image)

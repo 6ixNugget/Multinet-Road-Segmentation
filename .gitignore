@@ -1,2 +1,5 @@
 data/
 .DS_Store
+__pycache__
+trained_model.h5
+runs/

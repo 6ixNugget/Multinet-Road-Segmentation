@@ -17,8 +17,6 @@ import time
 import helper
 import sys
 
-import project_tests as test
-
 #--------------------------
 # DEPENDENCY CHECK
 #--------------------------
